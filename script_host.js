@@ -78,11 +78,8 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
 const API_ENDPOINT = 'us-central1-aiplatform.googleapis.com';
 const PROJECT_ID = 'grand-kingdom-392214';
 const MODEL_ID = 'text-bison@001';
-let AUTH_TOKEN =
-  'ya29.a0AbVbY6OQfs22iJ9ykWsAq577-XEtV2SLzZDK6ivlw5g6zaM-BMRbFsFLwbh10p0VUofGh_jsix8gsjyXUlZNyyR3cCjrqwsQVQWXRHhfn8so4QKA0LsrLZiYLKr50YWvulALyM252rqFWNLRfgYeq0FUACERTiCEduSbMGQQJ8j9TBxelRLnE96N122fKdr-FsoAYb20PiVJ14-UmyK89mtyDYNzBml228UtpcOtllxxEuFYJGQVDiUq0S9oXvW-AB9nNl80qCp_yxH8olBGUFoZh_jp5zAw3p8OeMpl8U81LvqMBbS8348NBJb6idi3xM7ko9DRAL8-cJ4JnbOriHRCZ0GnNLGGUZvjI-w8fyms8L9xV_mUtpbQK2YscGYj1add0v8sP7F3P1SKAMMqCp02bMkaCgYKAcoSARMSFQFWKvPl3bYC3TpwUyM0WVNh4n-DVw0418';
 const form = document.getElementById('apiForm');
 const outputPara = document.getElementById('output');
-// AUTH_TOKEN = AUTH_TOKEN.replace('awdOFE6wFg', '');
 
 form.addEventListener('submit', function (event) {
   event.preventDefault();
