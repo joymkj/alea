@@ -26,7 +26,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     userInput.value =
       transcript +
       '\n' +
-      "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217 ";
+      "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217.  Otherwise make up hypothetical precise details.";
     // Here, you can perform any desired actions with the transcribed text
     // For example, you can update a text field or send the transcript to a server
     event.preventDefault();
@@ -79,7 +79,7 @@ const API_ENDPOINT = 'us-central1-aiplatform.googleapis.com';
 const PROJECT_ID = 'grand-kingdom-392214';
 const MODEL_ID = 'text-bison@001';
 let AUTH_TOKEN =
-  'ya29.a0AbVbY6NjMHQiasBgvtHQ7BVJ4Thx5UUbo7QaG7mIqCjpTnkvriV9B3IZg-6q-GE34-R0fjjjRxFKtS_ZMhMYGwPSZBpau_9Imkr3HKXzRlqkgtuyO3IFCmRQdAY4XGdstrxAji6aRkavx6xpSchLV3IWGptJf43nVX2L-Ey5S2pUaUukohqit1y142V3M2AthU7Ly9_zPw_B8rGRAhHzx4yFhggTWcL28oEfjSQ4AiDaJoxIxz_fb2c214I9BOfjDVMoiY3EQbnOxq7HN6n38BM6LsxUojvkIetaeZpXYtJqJ7fq1QCfHN1bwycOCd5tmhqCqCIFx-i4hGEPhHlH3DFytPQqrC0iVdob-hyepASFJWE60VqE78_ckt7EPujgc1KWJwbF4kC--7yk1PmV8ReSz_4aCgYKAQMSARMSFQFWKvPliicD0iFxTebUC4HRxe8_tA0418';
+  'ya29.a0AbVbY6PQUemB7ej6nTlkIIolw0TOzRtc39PQ1TukYA_MfRBEo4ryMs6zhUwARVVFyV3VvWZ_139m-TohL_0pVDR4FttrijUd4xX4GRrx--s46553braLHbTqTZeAHorihoVcJ9EG7TqH6AN2U43a2_qLDcD1YitM1NfTsxHR7Mp9pke4N4UG1ppFlEU2Bc87La18kTXOb0U1Kz1glWpX-xTg6qPj9cNKjJt-2uGFEsp-NyinB4RRtS6lzHSVTQLVVvMYsJKzYiSBaSEt_gJZEV5Z9IkOwbYvF7ph0q_-CTTRBad1AVptQayOsg7hO9vQUv9R6EFib7LfuTL8gMIiy0kSZ0-epFLLIdLbO7MoV_OfvRZ9qv3nVDILuHjmLlYi2_YheK5lHbmNzAeZbiYmyoo7DLsaCgYKAcISARMSFQFWKvPlhoYWJsYat811k2O8d2NasQ0418';
 const form = document.getElementById('apiForm');
 const outputPara = document.getElementById('output');
 // AUTH_TOKEN = AUTH_TOKEN.replace('awdOFE6wFg', '');
@@ -91,7 +91,7 @@ form.addEventListener('submit', function (event) {
   let contexeduserInput =
     userInput +
     '\n' +
-    "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217 ";
+    "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
   console.log('User Input: ', contexeduserInput);
 
   const url = `https://${API_ENDPOINT}/v1/projects/${PROJECT_ID}/locations/us-central1/publishers/google/models/${MODEL_ID}:predict`;
