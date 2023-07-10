@@ -1,0 +1,7 @@
+{
+  "name": "alea",
+  "version": "0.0.1",
+  "dependencies": {
+    "dotenv": "^8.6.0"
+  }
+}
