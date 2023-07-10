@@ -29,7 +29,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     let contexedUserInput =
       transcript +
       '\n' +
-      "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a host. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
+      "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user is a host. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
     // Here, you can perform any desired actions with the transcribed text
     // For example, you can update a text field or send the transcript to a server
     event.preventDefault();
@@ -91,7 +91,7 @@ form.addEventListener('submit', function (event) {
   let contexeduserInput =
     userInput +
     '\n' +
-    "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a host. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
+    "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user is a host. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
   console.log('User Input: ', contexeduserInput);
 
   const url = `https://${API_ENDPOINT}/v1/projects/${PROJECT_ID}/locations/us-central1/publishers/google/models/${MODEL_ID}:predict`;
