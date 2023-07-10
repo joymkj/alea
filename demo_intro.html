@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Background Image Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url('2.png');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-top: 150px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 20px 40px;
+        background-color: #000;
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+        border-radius: 20px;
+      }
+
+      .button:first-child {
+        margin-right: 43vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="guest_intro.html" class="button">Try it out</a>
+      <a href="host_intro.html" class="button">Try it out</a>
+    </div>
+  </body>
+</html>
