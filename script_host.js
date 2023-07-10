@@ -23,7 +23,8 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     const transcript = event.results[0][0].transcript;
     console.log('Transcript:', transcript);
     utterance.innerHTML = transcript;
-    userInput.value =
+    userInput.value = transcript;
+    let contexedUserInput =
       transcript +
       '\n' +
       "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a host. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
@@ -35,7 +36,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     console.log('API Endpoint: ', url);
 
     const body = {
-      instances: [{ content: userInput.value }],
+      instances: [{ content: contexedUserInput}],
       parameters: {
         temperature: 0.1,
         maxOutputTokens: 256,
