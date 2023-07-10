@@ -15,6 +15,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
   microphoneButton.addEventListener('click', () => {
     // Start speech recognition when the user speaks
     recognition.start();
+    document.querySelector("#apiForm").reset();
     userInput.innerText = "Listening...";
     microphoneButton.classList.toggle('clicked');
   });
