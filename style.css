@@ -120,3 +120,17 @@ textarea#output::placeholder {
 p {
   color: rgba(255, 255, 255, 0);
 }
+
+
+.back-button {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  color: red;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  color: white;
+}
