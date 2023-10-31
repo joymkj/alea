@@ -15,6 +15,8 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
   microphoneButton.addEventListener('click', () => {
     // Start speech recognition when the user speaks
     recognition.start();
+    document.querySelector("#apiForm").reset();
+    userInput.innerText = "Listening...";
     microphoneButton.classList.toggle('clicked');
   });
 
@@ -23,10 +25,11 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     const transcript = event.results[0][0].transcript;
     console.log('Transcript:', transcript);
     utterance.innerHTML = transcript;
-    userInput.value =
+    userInput.value = transcript;
+    let contextedUserInput =
       transcript +
       '\n' +
-      "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217.  Otherwise make up hypothetical precise details.";
+      "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217.  Otherwise make up hypothetical precise details.";
     // Here, you can perform any desired actions with the transcribed text
     // For example, you can update a text field or send the transcript to a server
     event.preventDefault();
@@ -35,7 +38,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     console.log('API Endpoint: ', url);
 
     const body = {
-      instances: [{ content: userInput.value }],
+      instances: [{ content: contexedUserInput}],
       parameters: {
         temperature: 0.1,
         maxOutputTokens: 256,
@@ -89,7 +92,7 @@ form.addEventListener('submit', function (event) {
   let contexeduserInput =
     userInput +
     '\n' +
-    "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user's name is Joy and he is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
+    "Answer the above question by imagining you are Alea, a chatbot for AirBnB which helps guests and hosts. The user is a guest. Reply precisely. Use these info if you don't know the answer: Wifi password - ALEA_123, airbnb location - 300 South Craig street, Pittsburgh 15217. Otherwise make up hypothetical precise details.";
   console.log('User Input: ', contexeduserInput);
 
   const url = `https://${API_ENDPOINT}/v1/projects/${PROJECT_ID}/locations/us-central1/publishers/google/models/${MODEL_ID}:predict`;
